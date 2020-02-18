@@ -33,22 +33,24 @@ class CreateToDo extends React.Component {
     return(
       <React.Fragment>
         <div className="checkboxWrapper">
-          <input  id="selectAll"
-                  onChange={this.handleChecked}
-                  type="checkbox"
-                  disabled={disableSelectAll}
-                  />
+          <input
+            id="selectAll"
+            onChange={this.handleChecked}
+            type="checkbox"
+            disabled={disableSelectAll}
+          />
           <label htmlFor="selectAll" className={classes}/>
         </div>
 
-        <input className="name"
-              onFocus={this.start}
-              onKeyPress={this.createItem}
-              onChange={this.changeValue}
-              value={text}
-              type="text"
-              placeholder="What needs to be done?"
-              />
+        <input
+          className="name"
+          onFocus={this.start}
+          onKeyPress={this.createItem}
+          onChange={this.changeValue}
+          value={text}
+          type="text"
+          placeholder="What needs to be done?"
+        />
       </React.Fragment>
     )
   }

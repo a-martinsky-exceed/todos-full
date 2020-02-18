@@ -2,9 +2,9 @@ import React from 'react';
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { CreateToDo } from './components/CreateToDo'
-import { ToDoList } from './components/ToDoList'
-import { Buttons } from './components/Buttons'
+import { CreateToDo } from './components/CreateToDo.jsx'
+import { ToDoList } from './components/ToDoList.jsx'
+import { Buttons } from './components/Buttons.jsx'
 import './App.css';
 
 toast.configure({
@@ -189,24 +189,26 @@ class App extends React.Component {
       <div className = "container">
         <h1 onClick={this.notify}>todos</h1>
         <div className="item">
-          <CreateToDo addToDo={this.addItem}
-                      checkedAll={this.checkedAll}
-                      list={list}
-                      disableSelectAll={list.length ? false : true}
-                      boldClass={boldClass}
-                      infoMessage={this.infoBottomNotify}
-                      />
+          <CreateToDo
+            addToDo={this.addItem}
+            checkedAll={this.checkedAll}
+            list={list}
+            disableSelectAll={list.length ? false : true}
+            boldClass={boldClass}
+            infoMessage={this.infoBottomNotify}
+          />
         </div>
-        <ToDoList list={list}
-                  buttons={this.buttons}
-                  mode={mode}
-                  setMode={this.setFilterMode}
-                  deleteFromList={this.deleteFromList}
-                  selectAll={selectAll}
-                  onCheck={this.onCheck}
-                  rename={this.rename}
-                  renameNotify={this.infoBottomNotify}
-                  />
+        <ToDoList
+          list={list}
+          buttons={this.buttons}
+          mode={mode}
+          setMode={this.setFilterMode}
+          deleteFromList={this.deleteFromList}
+          selectAll={selectAll}
+          onCheck={this.onCheck}
+          rename={this.rename}
+          renameNotify={this.infoBottomNotify}
+        />
         {list.length ? <Buttons list={list} setMode={this.setFilterMode} /> : null}
       </div>
     )

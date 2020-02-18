@@ -60,25 +60,29 @@ class Item extends React.Component {
       <div className={classesDiv} onMouseMove={this.hover} onMouseOut={this.revertHover}>
         <div className="checkboxWrapper">
           <input id="item_checkbox" className="checkbox" onChange={this.handleChecked} checked={checked} type="checkbox"/>
-          <label htmlFor="item_checkbox"
-          />
+          <label htmlFor="item_checkbox" />
         </div>
 
-        <input id={id} className={classesInput}
+        <input
+          id={id}
+          className={classesInput}
           onChange={(e)=>this.changeValue(e, id)}
           onKeyPress={(e)=>this.processRename(e, id)}
           readOnly={disableEdit}
           onDoubleClick={this.startRename}
           onBlur={this.endRename}
           value={toDoName}
-          />
+        />
 
-        <button id="deleteItem"
-                name="getIdToDestroy"
-                className={hiddenButton}
-                onMouseMove={this.hover}
-                onMouseOut={this.revertHover}
-                onClick={this.getIdToDestroy}>×</button>
+        <button
+          id="deleteItem"
+          name="getIdToDestroy"
+          className={hiddenButton}
+          onMouseMove={this.hover}
+          onMouseOut={this.revertHover}
+          onClick={this.getIdToDestroy}>
+          ×
+        </button>
       </div>
     )
   }

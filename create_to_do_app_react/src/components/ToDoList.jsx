@@ -1,5 +1,5 @@
 import React from 'react';
-import { Item } from './Item'
+import { Item } from './Item.jsx'
 
 class ToDoList extends React.Component {
   filteredList = (list, mode, buttons) => {
@@ -17,7 +17,7 @@ class ToDoList extends React.Component {
 
     const items = data.map((item, key) => {
       return <Item
-      key={key}
+              key={key}
               id={item._id}
               text={item.text}
               checked={item.isChecked}
@@ -27,7 +27,7 @@ class ToDoList extends React.Component {
               rename={rename}
               renameNotify={renameNotify}
               textDecoration={item.textDecoration}
-              />
+            />
       })
     return items
   }
