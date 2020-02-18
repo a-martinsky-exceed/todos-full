@@ -187,7 +187,7 @@ class App extends React.Component {
     const boldClass = list.every(item => item.isChecked) ? 'bold' : ''
     return(
       <div className = "container">
-        <h1 onClick={this.notify}>todos</h1>
+        <h1>todos</h1>
         <div className="item">
           <CreateToDo
             addToDo={this.addItem}
